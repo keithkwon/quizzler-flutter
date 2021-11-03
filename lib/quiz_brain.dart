@@ -31,11 +31,21 @@ class QuizBrain {
   ];
 
   void nextQuestion() {
-    if (_questionNumber < _questionBank.length - 1) {
+    if (_questionNumber < _questionBank.length) {
       _questionNumber += 1;
-    } else {
-      _questionNumber = 0;
     }
+  }
+
+  bool isFinished() {
+    if (_questionNumber == _questionBank.length) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  void resetQuestionNumber() {
+    _questionNumber = 0;
   }
 
   String getQuestionText() {
